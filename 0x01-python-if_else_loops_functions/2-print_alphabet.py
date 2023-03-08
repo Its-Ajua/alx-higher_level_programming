@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-for ch in range(97, 123):
-    val = chr(ch)
-    alpha = "" + val
-    print("{}".format(alpha), end='')
+for i in range(97, 123):
+    vaLUe = chr(i)
+    alPha = "" + vaLUe
+    print("{}".format(alPha), end='')
