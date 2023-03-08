@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-i = 0
-while i < 26:
-    print('{:c}'. format(i + 97), end='')
-    i = i + 1
+
+""Print the alphabet in lowercase, not followed by a new line.""
+fo ch in range(97, 123):
+    print("{}".format(chr(ch)), end="")
