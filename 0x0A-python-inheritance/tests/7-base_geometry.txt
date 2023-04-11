@@ -37,6 +37,11 @@ Below are test cases on how the class can be used
 	TypeError: check must be an integer
 
 	>>> bg = BaseGeometry()
+	>>> bg.integer_validator("check", "betty")
+	Traceback (most recent call last):
+	TypeError: check must be an integer
+
+	>>> bg = BaseGeometry()
 	>>> bg.integer_validator("check", (3,))
 	Traceback (most recent call last):
 	TypeError: check must be an integer
@@ -53,6 +58,16 @@ Below are test cases on how the class can be used
 
 	>>> bg = BaseGeometry()
 	>>> bg.integer_validator("height", False)
+	Traceback (most recent call last):
+	TypeError: check must be an integer
+
+	>>> bg = BaseGeometry()
+	>>> bg.integer_validator("check", {1, 1})
+	Traceback (most recent call last):
+	TypeError: check must be an integer
+
+	>>> bg = BaseGeometry()
+	>>> bg.integer_validator("check","435")
 	Traceback (most recent call last):
 	TypeError: check must be an integer
 
