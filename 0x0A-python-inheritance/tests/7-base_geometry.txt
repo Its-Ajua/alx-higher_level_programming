@@ -1,12 +1,12 @@
-BaseGeometry
-============
+Test for 7-base_geometry.py
+===========================
 
 >>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
 
-Test cases
+Below are test cases on how the class can be used
 
-	Zero and negative integers
-	--------------------------
+	Test zero and negative integers
+	-------------------------------
 	>>> bg = BaseGeometry()
 	>>> bg.integer_validator("check", 0)
 	Traceback (most recent call last):
@@ -17,20 +17,20 @@ Test cases
 	Traceback (most recent call last):
 	ValueError: check must be greater than 0
 
-	Integers greater than 0
-	-----------------------
+	Test with integers greater than 0
+	---------------------------------
 	>>> bg = BaseGeometry()
 	>>> bg.integer_validator("check", 999)
 
-	area method when not implemented
-	--------------------------------
+	Test for area method when not implemented
+	-----------------------------------------
 	>>> bg = BaseGeometry()
 	>>> bg.area()
 	Traceback (most recent call last):
 	Exception: area() is not implemented
 
-	Non-integers
-	------------
+	Test with non-integers
+	----------------------
 	>>> bg = BaseGeometry()
 	>>> bg.integer_validator("check", [3])
 	Traceback (most recent call last):
@@ -56,6 +56,8 @@ Test cases
 	Traceback (most recent call last):
 	TypeError: check must be an integer
 
+	Test invalid number of arguments
+	--------------------------------
 	>>> bg = BaseGeometry()
 	>>> bg.integer_validator()
 	Traceback (most recent call last):
