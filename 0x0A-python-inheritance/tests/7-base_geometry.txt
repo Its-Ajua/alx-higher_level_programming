@@ -1,0 +1,42 @@
+BaseGeometry
+============
+
+>>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+
+Test cases
+
+	Zero and negative integers
+	--------------------------
+	>>> bg = BaseGeometry()
+	>>> bg.integer_validator("check", 0)
+	Traceback (most recent call last):
+	ValueError: check must be greater than 0
+
+	>>> bg = BaseGeometry()
+	>>> bg.integer_validator("check", -78)
+	Traceback (most recent call last):
+	ValueError: check must be greater than 0
+
+	Integers greater than 0
+	-----------------------
+	>>> bg = BaseGeometry()
+	>>> bg.integer_validator("check", 999)
+
+	area method when not implemented
+	--------------------------------
+	>>> bg = BaseGeometry()
+	>>> bg.area()
+	Traceback (most recent call last):
+	Exception: area() is not implemented
+
+	Non-integers
+	------------
+	>>> bg = BaseGeometry()
+	>>> bg.integer_validator("check", [3])
+	Traceback (most recent call last):
+	TypeError: check must be an integer
+
+	>>> bg = BaseGeometry()
+	>>> bg.integer_validator("check", (3))
+	Traceback (most recent call last):
+	TypeError: check must be an integer
