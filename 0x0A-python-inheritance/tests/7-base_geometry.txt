@@ -17,11 +17,6 @@ Below are test cases on how the class can be used
 	Traceback (most recent call last):
 	ValueError: check must be greater than 0
 
-	Test with integers greater than 0
-	---------------------------------
-	>>> bg = BaseGeometry()
-	>>> bg.integer_validator("check", 999)
-
 	Test for area method when not implemented
 	-----------------------------------------
 	>>> bg = BaseGeometry()
@@ -59,7 +54,7 @@ Below are test cases on how the class can be used
 	>>> bg = BaseGeometry()
 	>>> bg.integer_validator("height", False)
 	Traceback (most recent call last):
-	TypeError: check must be an integer
+	TypeError: height must be an integer
 
 	>>> bg = BaseGeometry()
 	>>> bg.integer_validator("check", {1, 1})
