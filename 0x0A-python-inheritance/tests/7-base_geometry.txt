@@ -5,6 +5,11 @@ BaseGeometry
 
 Below are test cases on how the class can be used
 
+	Test with integers greater than 0:
+	----------------------------------
+	>>> bg = BaseGeometry()
+	>>> bg.integer_validator("check", 999)
+
 	Test zero and negative integers
 	-------------------------------
 	>>> bg = BaseGeometry()
