@@ -25,4 +25,6 @@ class Rectangle(BaseGeometry):
         """method should be implemented"""
         return (self.__width * self.__height)
 
-    return ("[{}] {}/{}".format(type(self).__name__, self.__width, self.__height))
+    def __str__(self):
+        """returns object in sting format"""
+        return ("[{}] {}/{}".format(type(self).__name__, self.__width, self.__height))
