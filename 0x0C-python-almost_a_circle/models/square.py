@@ -7,6 +7,10 @@ class Square(Rectangle):
     """Defining a square class"""
     def __init__(self, size, x=0, y=0, id=None):
         """initializing the square"""
+        self.size = size
+        self.x = x
+        self.y = y
+        self.id = None
         super().__init__(size, size, x, y, id)
 
     def __str__(self):
@@ -17,12 +21,12 @@ class Square(Rectangle):
     @property
     def size(self):
         """retrieving the size of the square"""
-        return self.width
+        return self.__width
 
     @size.setter
     def size(self, value):
-        self.width = value
-        self.height = value
+        self.__width = value
+        self.__height = value
 
     def __update(self, id=None, size=None, x=None, y=None):
         """internally updating instance attributes"""
@@ -44,5 +48,5 @@ class Square(Rectangle):
 
     def to_dictionary(self):
         """returns dictionary representation of the class"""
-        return {"id": self.id, "size": self.width, 
+        return {"id": self.id, "size": self.size, 
                 "x": self.x, "y": self.y}

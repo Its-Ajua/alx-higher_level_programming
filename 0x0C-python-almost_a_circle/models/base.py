@@ -25,13 +25,13 @@ class Base:
         if list_dictionaries is None or not list_dictionaries:
             return "[]"
         else:
-            return dumps(list_dictionaries)
+            return json.dumps(list_dictionaries)
 
     @classmethod
     def save_to_file(cls, list_objs):
         """Saves json representation to the file"""
         if list_objs is not None:
-            list_objs = [x.to_dictionary() for x in list]
+            list_objs = [x.to_dictionary() for x in list_objs]
         with open("{}.json".format(cls.__name__), "w", encoding="utf-8") as f:
             f.write(cls.to_json_string(list_objs))
 
@@ -41,7 +41,7 @@ class Base:
         if json_string is None or not json_string:
             return "[]"
         else:
-            return loads(json_string)
+            return json.loads(json_string)
 
     @classmethod
     def create(cls, **dictionary):
@@ -51,7 +51,7 @@ class Base:
         if cls is Rectangle:
             new_instance = (1, 2)
         elif cls is Square:
-            new_instance = None
+            new_instance = (1)
         else:
             new_instance = None
 
