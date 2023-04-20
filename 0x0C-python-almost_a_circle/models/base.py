@@ -4,11 +4,12 @@
 
 import json
 import csv
+import turtle
 import os
 
 
 class Base:
-    """Representation of the base of our Object Oriented Programme"""
+    """Represents the base class of all the classes created"""
 
     __nb_objects = 0
 
