@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 """Module for square class"""
+
 from models.rectangle import Rectangle
 
 
@@ -16,7 +17,7 @@ class Square(Rectangle):
     def __str__(self):
         """Returning string representation of the square"""
         return "[{}] ({}) {}/{} - {}".\
-            format(type(self).__name__, self.id, self.x, self.y, self.width)
+            format(Square, self.id, self.x, self.y, self.size)
 
     @property
     def size(self):
@@ -25,6 +26,11 @@ class Square(Rectangle):
 
     @size.setter
     def size(self, value):
+        """setting the value of the size of the square"""
+        if type(value) is not int:
+            raise TypeError("width must be an integer")
+        if value <= 0:
+            raise ValueError("width must be > 0")
         self.__width = value
         self.__height = value
 
@@ -48,5 +54,4 @@ class Square(Rectangle):
 
     def to_dictionary(self):
         """returns dictionary representation of the class"""
-        return {"id": self.id, "size": self.size, 
-                "x": self.x, "y": self.y}
+        return {"id": self.id, "size": self.size, "x": self.x, "y": self.y}

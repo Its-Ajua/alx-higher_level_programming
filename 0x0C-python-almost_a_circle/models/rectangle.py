@@ -52,8 +52,8 @@ class Rectangle(Base):
         """setting the value of the x"""
         if (type(value) is not int):
             raise TypeError("x must be an integer")
-        if value <= 0:
-            raise ValueError("x must be > 0")
+        if value < 0:
+            raise ValueError("x must be >= 0")
         self.__x = value
 
     @property
@@ -66,20 +66,20 @@ class Rectangle(Base):
         """setting the value of the y"""
         if (type(value) is not int):
             raise TypeError("y must be an integer")
-        if value <= 0:
-            raise ValueError("y must be > 0")
+        if value < 0:
+            raise ValueError("y must be >= 0")
         self.__y = value
 
     def area(self):
         """retrieving the area of the rectangle"""
-        return self.__width * self.__height
+        return (self.__width * self.__height)
 
     def display(self):
         """Displays the rectangle using #"""
-        for y in range(self.__y):
-            print()
+        for y in range(self.y):
+            print("")
         for i in range(self.__height):
-            for x in range(self.__x):
+            for x in range(self.x):
                 print(" ", end="")
             for j in range(self.__width):
                 print("#", end="")
@@ -88,7 +88,7 @@ class Rectangle(Base):
     def __str__(self):
         """format for the string representation of the class"""
         return "[{}] ({}) {}/{} - {}/{}".\
-            format(type(self).__name__, self.id, self.__x, self.__y, self.__width, self.__height)
+            format("Rectangle", self.id, self.__x, self.__y, self.__width, self.__height)
 
     def update(self, *args, **kwargs):
         """updates instance attributes"""
@@ -108,6 +108,7 @@ class Rectangle(Base):
                     self.x = i
                 elif x == 4:
                     self.y = i
+                a += 1
 
         elif kwargs and len(kwargs) != 0:
             for a, b in kwargs.items():

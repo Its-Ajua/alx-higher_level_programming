@@ -6,6 +6,7 @@ import json
 import csv
 import os
 
+
 class Base:
     """Representation of the base of our Object Oriented Programme"""
 
